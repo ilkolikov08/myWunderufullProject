@@ -1,0 +1,1626 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZACDC_MANAGE_TASK_SRV" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="ALDI_CAT_F4_HELP" sap:label="ALDI Category F4 Help" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Aldi_Category"/>
+                </Key>
+                <Property Name="Aldi_Category" Type="Edm.String" Nullable="false" MaxLength="18" sap:unicode="false" sap:label="ALDI Category" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Description" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Description" sap:creatable="false" sap:updatable="false"/>
+            </EntityType>
+            <EntityType Name="DC_INFO" sap:label="DC Information" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Matnr"/>
+                    <PropertyRef Name="Stage"/>
+                    <PropertyRef Name="Taskid"/>
+                    <PropertyRef Name="Werks"/>
+                </Key>
+                <Property Name="Ccngn" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Commodity Code" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fprfm" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Dist.prof." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CcngnT" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Commodity Code Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Ladgr" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Loading Group" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Matnr" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Display ID" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="RowCriticality" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Row Criticality" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="WerksT" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Site Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="FprfmT" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Dist.prof. Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="LadgrT" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Loading Group Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="MatnrT" Type="Edm.String" Nullable="false" MaxLength="100" sap:unicode="false" sap:label="Display ID Descr." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Stage" Type="Edm.String" Nullable="false" MaxLength="1" sap:text="StageT" sap:unicode="false" sap:label="Data Stage" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="Taskid" Type="Edm.Guid" Nullable="false" sap:unicode="false" sap:label="Task ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="StageT" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Data Stage Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Werks" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Site" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="Mmsta" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="P-S artl status" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="MmstaT" Type="Edm.String" Nullable="false" MaxLength="25" sap:unicode="false" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Mmstd" Type="Edm.DateTime" Nullable="false" Precision="7" sap:display-format="Date" sap:unicode="false" sap:label="Valid From" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Oaid" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="Order area ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="OaidT" Type="Edm.String" Nullable="false" MaxLength="25" sap:unicode="false" sap:label="Order area desc" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Datab" Type="Edm.DateTime" Precision="7" sap:display-format="Date" sap:unicode="false" sap:label="Valid From" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Datbi" Type="Edm.DateTime" Precision="7" sap:display-format="Date" sap:unicode="false" sap:label="Valid To" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Dispo" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Stock Planner" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="FolupArtNr" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="FU/Repl. Article" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="FolupArtNrT" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Land1" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Country" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="Task_Dc_Info" Relationship="ZACDC_MANAGE_TASK_SRV.Task_Dc_Info" FromRole="ToRole_Task_Dc_Info" ToRole="FromRole_Task_Dc_Info" sap:label="Task -&gt; DC Information"/>
+            </EntityType>
+            <EntityType Name="DC_SALES_INFO" sap:label="DC Sales Information" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Matnr"/>
+                    <PropertyRef Name="Stage"/>
+                    <PropertyRef Name="Taskid"/>
+                    <PropertyRef Name="Vkorg"/>
+                    <PropertyRef Name="Vtweg"/>
+                </Key>
+                <Property Name="Matnr" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Display ID" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="MatnrT" Type="Edm.String" Nullable="false" MaxLength="100" sap:unicode="false" sap:label="Display ID Descr." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Prat1" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Drop shipment" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Prat3" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="WarrantyRlvnt" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Prodh" Type="Edm.String" Nullable="false" MaxLength="18" sap:unicode="false" sap:label="Prod.hierarchy" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ProdhT" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="RowCriticality" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Row Criticality" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Stage" Type="Edm.String" Nullable="false" MaxLength="1" sap:text="StageT" sap:unicode="false" sap:label="Data Stage" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="StageT" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Data Stage Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Taskid" Type="Edm.Guid" Nullable="false" sap:unicode="false" sap:label="Task ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Vkorg" Type="Edm.String" Nullable="false" MaxLength="4" sap:text="VkorgT" sap:unicode="false" sap:label="Sales Org." sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="VkorgT" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Sales Org. Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Vtweg" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Distr. Channel" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZzagerVal" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Age Restriction" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZzagerValT" Type="Edm.String" Nullable="false" MaxLength="60" sap:unicode="false" sap:label="Short Descript." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Zzprgrp" Type="Edm.String" Nullable="false" MaxLength="3" sap:text="ZzprgrpT" sap:unicode="false" sap:label="Purch. Group" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZzprgrpT" Type="Edm.String" Nullable="false" MaxLength="18" sap:unicode="false" sap:label="Purch. Group Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="Task_Dc_Sales_Info" Relationship="ZACDC_MANAGE_TASK_SRV.Task_Dc_Sales_Info" FromRole="ToRole_Task_Dc_Sales_Info" ToRole="FromRole_Task_Dc_Sales_Info" sap:label="Task -&gt; DC Sales Information"/>
+            </EntityType>
+            <EntityType Name="UOM_INFO" sap:label="Article UoM Information" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Matnr"/>
+                    <PropertyRef Name="Stage"/>
+                    <PropertyRef Name="Taskid"/>
+                    <PropertyRef Name="Meinh"/>
+                </Key>
+                <Property Name="Matnr" Type="Edm.String" Nullable="false" MaxLength="40" sap:text="MatnrT" sap:unicode="false" sap:label="Display ID" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="RowCriticality" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Row Criticality" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="MatnrT" Type="Edm.String" Nullable="false" MaxLength="100" sap:unicode="false" sap:label="Display ID Descr." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Stage" Type="Edm.String" Nullable="false" MaxLength="1" sap:text="StageT" sap:unicode="false" sap:label="Data Stage" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="Taskid" Type="Edm.Guid" Nullable="false" sap:unicode="false" sap:label="Task ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Meinh" Type="Edm.String" Nullable="false" MaxLength="3" sap:text="MeinhT" sap:unicode="false" sap:label="Unit of Measure" sap:creatable="false" sap:updatable="false" sap:filterable="false" sap:semantics="unit-of-measure"/>
+                <Property Name="StageT" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Data Stage Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="MeinhT" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="UoM Text" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Umrez" Type="Edm.Decimal" Nullable="false" Precision="5" Scale="0" sap:unicode="false" sap:label="Counter" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="Mesub" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Lower-lev. unit" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="unit-of-measure"/>
+                <NavigationProperty Name="Task_Uom_Info" Relationship="ZACDC_MANAGE_TASK_SRV.Task_Uom_Info" FromRole="ToRole_Task_Uom_Info" ToRole="FromRole_Task_Uom_Info" sap:label="Task -&gt; UOM Information"/>
+            </EntityType>
+            <EntityType Name="TASK" sap:label="Task Information" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Taskid"/>
+                </Key>
+                <Property Name="ActionAssignTo" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="Action Assign To" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="hiernode2" Type="Edm.String" Nullable="false" MaxLength="18" sap:unicode="false" sap:label="ALDI Category" sap:creatable="false" sap:updatable="false" sap:value-list="standard"/>
+                <Property Name="ActionCompleted" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="Action Complete" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ActionInProgress" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="Action In Progress" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ActionNotRequired" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="Action Not Required" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ActionPostpone" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="Action Postpone" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ActionReset" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="Action Reset" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ActionSendNotification" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="Action Send Notification" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="AffectedWerks" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Affected DCs" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Akart" Type="Edm.String" Nullable="false" MaxLength="4" sap:text="AkartT" sap:unicode="false" sap:label="Promotion Type" sap:creatable="false" sap:updatable="false" sap:value-list="standard"/>
+                <Property Name="AkartT" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Promotion Type Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Aktnr" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Promotion" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Aktyp" Type="Edm.String" Nullable="false" MaxLength="4" sap:text="AktypT" sap:unicode="false" sap:label="Promotion Category" sap:creatable="false" sap:updatable="false" sap:value-list="standard"/>
+                <Property Name="AktypT" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Promotion Category Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="AssignedTo" Type="Edm.String" Nullable="false" MaxLength="50" sap:text="AssignedToT" sap:unicode="false" sap:label="Assigned To" sap:creatable="false" sap:updatable="false" sap:value-list="standard"/>
+                <Property Name="AssignedToT" Type="Edm.String" Nullable="false" MaxLength="255" sap:unicode="false" sap:label="Assigned To (Name)" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Bsart" Type="Edm.String" Nullable="false" MaxLength="4" sap:text="BsartT" sap:unicode="false" sap:label="Purchasing Document Type" sap:creatable="false" sap:updatable="false" sap:value-list="standard"/>
+                <Property Name="BsartT" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Purchasing Document Type Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Bstyp" Type="Edm.String" Nullable="false" MaxLength="1" sap:text="BstypT" sap:unicode="false" sap:label="Purchasing Document Category" sap:creatable="false" sap:updatable="false" sap:value-list="fixed-values"/>
+                <Property Name="BstypT" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Purchasing Document Category Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CommodityGroup" Type="Edm.String" Nullable="false" MaxLength="2" sap:text="CommodityGroupT" sap:unicode="false" sap:label="ALDI Commodity Group" sap:creatable="false" sap:updatable="false" sap:value-list="standard"/>
+                <Property Name="CommodityGroupT" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="ALDI Commodity Group Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Datab" Type="Edm.DateTime" Precision="7" sap:display-format="Date" sap:text="DatabT" sap:unicode="false" sap:label="DC Listing Valid From" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="DatabT" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="DC Listing Valid From - Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Datbi" Type="Edm.DateTime" Precision="7" sap:display-format="Date" sap:text="DatbiT" sap:unicode="false" sap:label="DC Listing Valid To" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="DatbiT" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="DC Listing Valid To - Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Dispo" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Stock Planner" sap:creatable="false" sap:updatable="false" sap:value-list="standard"/>
+                <Property Name="Ebeln" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Purchasing Doc." sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Ebelp" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="Purchasing Item" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="EventCount" Type="Edm.Byte" Nullable="false" sap:unicode="false" sap:label="Event Count" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="FieldEbeln" Type="Edm.Byte" Nullable="false" sap:unicode="false" sap:label="Field Control for Free Purchasing Doc." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="FieldEvrtn" Type="Edm.Byte" Nullable="false" sap:unicode="false" sap:label="Field Control for Free Outline Agreement" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="FieldLlief" Type="Edm.Byte" Nullable="false" sap:unicode="false" sap:label="Field Control for Free Goods Supplier" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="FieldMatnr" Type="Edm.Byte" Nullable="false" sap:unicode="false" sap:label="Field Control for Free Diplay ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="FieldWerks" Type="Edm.Byte" Nullable="false" sap:unicode="false" sap:label="Field Control for Free DC" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fprfm" Type="Edm.String" Nullable="false" MaxLength="3" sap:text="FprfmT" sap:unicode="false" sap:label="Distribution Profile" sap:creatable="false" sap:updatable="false" sap:value-list="standard"/>
+                <Property Name="FprfmT" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Distribution Profile Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="FreeEbeln" Type="Edm.String" Nullable="false" MaxLength="20" sap:field-control="FieldEbeln" sap:unicode="false" sap:label="Free Purchasing Doc." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="FreeEvrtn" Type="Edm.String" Nullable="false" MaxLength="20" sap:field-control="FieldEvrtn" sap:unicode="false" sap:label="Free Outline Agreement" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="FreeLlief" Type="Edm.String" Nullable="false" MaxLength="35" sap:field-control="FieldLlief" sap:text="FreeLliefT" sap:unicode="false" sap:label="Free Goods Supplier" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="FreeLliefT" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Free Goods Supplier Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="FreeMatnr" Type="Edm.String" Nullable="false" sap:field-control="FieldMatnr" sap:unicode="false" sap:label="Free Display ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="FreeWerks" Type="Edm.String" Nullable="false" sap:field-control="FieldWerks" sap:unicode="false" sap:label="Free DC" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Important" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="Important" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Inco1" Type="Edm.String" Nullable="false" MaxLength="3" sap:text="Inco1T" sap:unicode="false" sap:label="Incoterms (Purchasing Document)" sap:creatable="false" sap:updatable="false" sap:value-list="standard"/>
+                <Property Name="Inco1T" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Incoterms Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Kdatb" Type="Edm.DateTime" Precision="7" sap:display-format="Date" sap:unicode="false" sap:label="Contract Validity From" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Kdate" Type="Edm.DateTime" Precision="7" sap:display-format="Date" sap:unicode="false" sap:label="Contract Validity To" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Ktmng" Type="Edm.Decimal" Precision="13" Scale="3" sap:unicode="false" sap:label="Target Quantity (Purchasing Document)" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="LastNote" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Last Note" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Lifnr" Type="Edm.String" Nullable="false" MaxLength="10" sap:text="LifnrT" sap:unicode="false" sap:label="Vendor ID (Purchasing Document)" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="LifnrT" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Vendor Description (Purchasing Document)" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Matnr" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Display ID" sap:creatable="false" sap:updatable="false" sap:value-list="standard"/>
+                <Property Name="MatnrT" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Display ID Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Mmsta" Type="Edm.String" Nullable="false" MaxLength="2" sap:text="MmstaT" sap:unicode="false" sap:label="Article Status" sap:creatable="false" sap:updatable="false" sap:value-list="fixed-values"/>
+                <Property Name="MmstaT" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Article Status Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Mmstd" Type="Edm.DateTime" Precision="7" sap:display-format="Date" sap:unicode="false" sap:label="Article Status valid from date" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Mtart" Type="Edm.String" Nullable="false" MaxLength="4" sap:text="MtartT" sap:unicode="false" sap:label="Article type" sap:creatable="false" sap:updatable="false" sap:value-list="standard"/>
+                <Property Name="MtartT" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Article type Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Parhu" Type="Edm.String" Nullable="false" MaxLength="10" sap:text="ParhuT" sap:unicode="false" sap:label="HUB ID (Purchasing Document)" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="ParhuT" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="HUB Description (Purchasing Document)" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Parwl" Type="Edm.String" Nullable="false" MaxLength="10" sap:text="ParwlT" sap:unicode="false" sap:label="GS ID (Purchasing Document)" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="ParwlT" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="GS Description (Purchasing Document)" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="PostedOn" Type="Edm.DateTime" Precision="7" sap:display-format="Date" sap:unicode="false" sap:label="Posted On" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Prodh" Type="Edm.String" Nullable="false" MaxLength="18" sap:unicode="false" sap:label="Prod.hierarchy" sap:creatable="false" sap:updatable="false" sap:value-list="standard"/>
+                <Property Name="ProdhT" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Prod.hierarchy Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Rgroup" Type="Edm.String" Nullable="false" MaxLength="30" sap:text="RgroupT" sap:unicode="false" sap:label="Receiver Group" sap:creatable="false" sap:updatable="false" sap:value-list="fixed-values"/>
+                <Property Name="RgroupT" Type="Edm.String" Nullable="false" MaxLength="80" sap:unicode="false" sap:label="Receiver Group Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Status" Type="Edm.String" Nullable="false" MaxLength="1" sap:text="StatusT" sap:unicode="false" sap:label="Status" sap:creatable="false" sap:updatable="false" sap:value-list="fixed-values"/>
+                <Property Name="StatusT" Type="Edm.String" Nullable="false" MaxLength="80" sap:unicode="false" sap:label="Status Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SubCommodityGroup" Type="Edm.String" Nullable="false" MaxLength="18" sap:text="SubCommodityGroupT" sap:unicode="false" sap:label="ALDI Sub-Commodity Group" sap:creatable="false" sap:updatable="false" sap:value-list="standard"/>
+                <Property Name="SubCommodityGroupT" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="ALDI Sub-Commodity Group Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TabArtInfo" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="TabArtInfo" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TabChgInfo" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="TabChgInfo" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TabDcInfo" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="TabDcInfo" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TabDcSalesInfo" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="TabDcSalesInfo" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TabFreeTextInput" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="TabFreeTextInput" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TabMultiArtInfo" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="TabMultiArtInfo" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TabPromoInfo" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="TabPromoInfo" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TabPurDocInfo" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="TabPurDocInfo" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TabPurItemInfo" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="TabPurItemInfo" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TabRichText" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="TabRichText" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TabText" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="TabText" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TabUomInfo" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="TabUomInfo" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Taskid" Type="Edm.Guid" Nullable="false" sap:unicode="false" sap:label="Task ID" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Taskty" Type="Edm.String" Nullable="false" MaxLength="1" sap:text="TasktyT" sap:unicode="false" sap:label="Task Type" sap:creatable="false" sap:updatable="false" sap:value-list="fixed-values"/>
+                <Property Name="TasktyT" Type="Edm.String" Nullable="false" MaxLength="80" sap:unicode="false" sap:label="Task Type Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Tragr" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Trans. Group" sap:creatable="false" sap:updatable="false" sap:value-list="fixed-values"/>
+                <Property Name="Triger" Type="Edm.String" Nullable="false" MaxLength="30" sap:text="TrigerT" sap:unicode="false" sap:label="Trigger" sap:creatable="false" sap:updatable="false" sap:value-list="standard"/>
+                <Property Name="TrigerT" Type="Edm.String" Nullable="false" MaxLength="80" sap:unicode="false" sap:label="Trigger Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TriggerMessageHtml" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Variable Message \ Free Text Memo" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TstmpChg" Type="Edm.DateTimeOffset" Nullable="false" Precision="0" sap:unicode="false" sap:label="Changed On" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="TstmpCrt" Type="Edm.DateTimeOffset" Nullable="false" Precision="0" sap:unicode="false" sap:label="Created On" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="UnameChg" Type="Edm.String" Nullable="false" MaxLength="50" sap:text="UnameChgT" sap:unicode="false" sap:label="Changed By" sap:creatable="false" sap:updatable="false" sap:value-list="standard"/>
+                <Property Name="UnameChgT" Type="Edm.String" Nullable="false" MaxLength="255" sap:unicode="false" sap:label="Change By (Name)" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="UnameCrt" Type="Edm.String" Nullable="false" MaxLength="50" sap:text="UnameCrtT" sap:unicode="false" sap:label="Created By" sap:creatable="false" sap:updatable="false" sap:value-list="standard"/>
+                <Property Name="UnameCrtT" Type="Edm.String" Nullable="false" MaxLength="255" sap:unicode="false" sap:label="Created By (Name)" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Vkdab" Type="Edm.DateTime" Precision="7" sap:display-format="Date" sap:unicode="false" sap:label="On sale From (Promotion)" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Vkdbi" Type="Edm.DateTime" Precision="7" sap:display-format="Date" sap:unicode="false" sap:label="On sale To (Promotion)" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Werks" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="DC" sap:creatable="false" sap:updatable="false" sap:value-list="standard"/>
+                <Property Name="WerksT" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="DC Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZpromotionStatus" Type="Edm.String" Nullable="false" MaxLength="2" sap:text="ZpromotionStatusT" sap:unicode="false" sap:label="Promotion Status" sap:creatable="false" sap:updatable="false" sap:value-list="fixed-values"/>
+                <Property Name="ZpromotionStatusT" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Promotion Status Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Zzprgrp" Type="Edm.String" Nullable="false" MaxLength="3" sap:text="ZzprgrpT" sap:unicode="false" sap:label="Purch. Group" sap:creatable="false" sap:updatable="false" sap:value-list="standard"/>
+                <Property Name="ZzprgrpT" Type="Edm.String" Nullable="false" MaxLength="18" sap:unicode="false" sap:label="Purch. Group Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="Task_Steps" Relationship="ZACDC_MANAGE_TASK_SRV.Task_Steps" FromRole="FromRole_Task_Steps" ToRole="ToRole_Task_Steps" sap:label="Taks -&gt; Steps"/>
+                <NavigationProperty Name="Task_Art_Info" Relationship="ZACDC_MANAGE_TASK_SRV.Task_Art_Info" FromRole="FromRole_Task_Art_Info" ToRole="ToRole_Task_Art_Info" sap:label="Task -&gt; Article Information"/>
+                <NavigationProperty Name="Task_Uom_Info" Relationship="ZACDC_MANAGE_TASK_SRV.Task_Uom_Info" FromRole="FromRole_Task_Uom_Info" ToRole="ToRole_Task_Uom_Info" sap:label="Task -&gt; Article UoM Information"/>
+                <NavigationProperty Name="Task_Dc_Sales_info" Relationship="ZACDC_MANAGE_TASK_SRV.Task_Dc_Sales_Info" FromRole="FromRole_Task_Dc_Sales_Info" ToRole="ToRole_Task_Dc_Sales_Info" sap:label="Task -&gt; DC Sales Information"/>
+                <NavigationProperty Name="Task_Dc_Info" Relationship="ZACDC_MANAGE_TASK_SRV.Task_Dc_Info" FromRole="FromRole_Task_Dc_Info" ToRole="ToRole_Task_Dc_Info" sap:label="Task -&gt; DC Information"/>
+                <NavigationProperty Name="Task_Note_Info" Relationship="ZACDC_MANAGE_TASK_SRV.Task_Note_Info" FromRole="FromRole_Task_Note_Info" ToRole="ToRole_Task_Note_Info" sap:label="Task -&gt; Notes"/>
+                <NavigationProperty Name="Task_File_Info" Relationship="ZACDC_MANAGE_TASK_SRV.Task_File_Info" FromRole="FromRole_Task_File_Info" ToRole="ToRole_Task_File_Info" sap:label="Task -&gt; File Information"/>
+                <NavigationProperty Name="Task_Chg_Info" Relationship="ZACDC_MANAGE_TASK_SRV.Task_Chg_Info" FromRole="FromRole_Task_Chg_Info" ToRole="ToRole_Task_Chg_Info" sap:label="Task -&gt; Change Data Information"/>
+                <NavigationProperty Name="Task_Multi_Art_Info" Relationship="ZACDC_MANAGE_TASK_SRV.Task_Multi_Art_Info" FromRole="FromRole_Task_Multi_Art_Info" ToRole="ToRole_Task_Multi_Art_Info" sap:label="Task -&gt; Multple Article Information"/>
+                <NavigationProperty Name="Task_Pur_Doc_Info" Relationship="ZACDC_MANAGE_TASK_SRV.Task_Pur_Doc_Info" FromRole="FromRole_Task_Pur_Doc_Info" ToRole="ToRole_Task_Pur_Doc_Info" sap:label="Task -&gt; Purchase Document Information"/>
+                <NavigationProperty Name="Task_Pur_Item_Info" Relationship="ZACDC_MANAGE_TASK_SRV.Task_Pur_Item_Info" FromRole="FromRole_Task_Pur_Item_Info" ToRole="ToRole_Task_Pur_Item_Info" sap:label="Task -&gt; Purchase Document Items Informaiton"/>
+                <NavigationProperty Name="Task_Promo_Info" Relationship="ZACDC_MANAGE_TASK_SRV.Task_Promo_Info" FromRole="FromRole_Task_Promo_Info" ToRole="ToRole_Task_Promo_Info" sap:label="Task -&gt; Promotion Information"/>
+            </EntityType>
+            <EntityType Name="STEPS" sap:label="Steps Information" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Taskid"/>
+                    <PropertyRef Name="Stepid"/>
+                </Key>
+                <Property Name="Description" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SteptyT" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Step Type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Taskid" Type="Edm.Guid" Nullable="false" sap:unicode="false" sap:label="Task ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Stepid" Type="Edm.Guid" Nullable="false" sap:unicode="false" sap:label="Step ID" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="Stepty" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Step Type Tech. Name" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="UnameCrt" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="Created By" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="TstmpCrt" Type="Edm.DateTime" Nullable="false" Precision="0" sap:unicode="false" sap:label="Created On" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="UnameChg" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="Changed By" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="TstmpChg" Type="Edm.DateTime" Nullable="false" Precision="0" sap:unicode="false" sap:label="Changed On" sap:creatable="false" sap:updatable="false"/>
+                <NavigationProperty Name="Step_Art_Info" Relationship="ZACDC_MANAGE_TASK_SRV.Step_Art_Info" FromRole="FromRole_Step_Art_Info" ToRole="ToRole_Step_Art_Info" sap:label="Step -&gt; Article Information"/>
+                <NavigationProperty Name="Step_Chg_Info" Relationship="ZACDC_MANAGE_TASK_SRV.Step_Chg_Info" FromRole="FromRole_Step_Chg_Info" ToRole="ToRole_Step_Chg_Info" sap:label="Step -&gt; Change Data Information"/>
+                <NavigationProperty Name="Step_Dc_Info" Relationship="ZACDC_MANAGE_TASK_SRV.Step_Dc_Info" FromRole="FromRole_Step_Dc_Info" ToRole="ToRole_Step_Dc_Info" sap:label="Step -&gt; DC Information"/>
+                <NavigationProperty Name="Step_Dc_Sales_Info" Relationship="ZACDC_MANAGE_TASK_SRV.Step_Dc_Sales_Info" FromRole="FromRole_Step_Dc_Sales_Info" ToRole="ToRole_Step_Dc_Sales_Info" sap:label="Step -&gt; DC Sales Information"/>
+                <NavigationProperty Name="Step_Uom_Info" Relationship="ZACDC_MANAGE_TASK_SRV.Step_Uom_Info" FromRole="FromRole_Step_Uom_Info" ToRole="ToRole_Step_Uom_Info" sap:label="Step -&gt; UoM Information"/>
+            </EntityType>
+            <EntityType Name="NOTE_INFO" sap:label="Note Information" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Stepid"/>
+                    <PropertyRef Name="Taskid"/>
+                    <PropertyRef Name="Noteid"/>
+                </Key>
+                <Property Name="Status" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Note Status" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Stepid" Type="Edm.Guid" Nullable="false" sap:unicode="false" sap:label="Step ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Taskid" Type="Edm.Guid" Nullable="false" sap:unicode="false" sap:label="Task ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Deleted" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="Indicator: delete entry" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Noteid" Type="Edm.Guid" Nullable="false" sap:unicode="false" sap:label="Note ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="NoteContent" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Note" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="UnameCrt" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="User" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TstmpCrt" Type="Edm.DateTime" Nullable="false" Precision="0" sap:unicode="false" sap:label="Created On (UTC)" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="UnameChg" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="User" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TstmpChg" Type="Edm.DateTime" Nullable="false" Precision="0" sap:unicode="false" sap:label="Changed On (UTC)" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="FILE_INFO" m:HasStream="true" sap:label="File Information" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Taskid"/>
+                    <PropertyRef Name="Stepid"/>
+                </Key>
+                <Property Name="Link" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="String" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="FileBlob" Type="Edm.Binary" Nullable="false" sap:unicode="false" sap:label="File" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Taskid" Type="Edm.Guid" Nullable="false" sap:unicode="false" sap:label="Task ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="UnameCrt" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="User" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Stepid" Type="Edm.Guid" Nullable="false" sap:unicode="false" sap:label="Step ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TstmpCrt" Type="Edm.DateTime" Nullable="false" Precision="0" sap:unicode="false" sap:label="Time Stamp" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fileid" Type="Edm.Guid" Nullable="false" sap:unicode="false" sap:label="File ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="UnameChg" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="User" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Filety" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="File Type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TstmpChg" Type="Edm.DateTime" Nullable="false" Precision="0" sap:unicode="false" sap:label="Time Stamp" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Description" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="RETURN" sap:label="Return Messages" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Taskid"/>
+                </Key>
+                <Property Name="FileBlob" Type="Edm.Binary" Nullable="false" sap:unicode="false" sap:label="File" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Taskid" Type="Edm.Guid" Nullable="false" sap:unicode="false" sap:label="Task ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Type" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Message type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Message" Type="Edm.String" Nullable="false" MaxLength="220" sap:unicode="false" sap:label="Message Text" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="CHG_INFO" sap:label="Changed Data Information" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Lineid"/>
+                    <PropertyRef Name="Taskid"/>
+                    <PropertyRef Name="Stepid"/>
+                    <PropertyRef Name="Block"/>
+                    <PropertyRef Name="Sortn"/>
+                </Key>
+                <Property Name="Key" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Key" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Lineid" Type="Edm.Guid" Nullable="false" sap:unicode="false" sap:label="Line ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="RowCriticality" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Row Criticality" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Taskid" Type="Edm.Guid" Nullable="false" sap:unicode="false" sap:label="Task ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Stepid" Type="Edm.Guid" Nullable="false" sap:unicode="false" sap:label="Step ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Block" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Group Key" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="BlockT" Type="Edm.String" Nullable="false" MaxLength="80" sap:unicode="false" sap:label="Group" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="Sortn" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Sort number" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="FnameT" Type="Edm.String" Nullable="false" MaxLength="80" sap:unicode="false" sap:label="Field" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ValueOld" Type="Edm.String" Nullable="false" MaxLength="255" sap:unicode="false" sap:label="Value Before Change" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ValueNew" Type="Edm.String" Nullable="false" MaxLength="255" sap:unicode="false" sap:label="Value After Change" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="STATUS_F4_HELP" sap:label="Task Status F4 Help" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Value"/>
+                </Key>
+                <Property Name="Value" Type="Edm.String" Nullable="false" MaxLength="10" sap:text="Descr" sap:unicode="false" sap:label="Lower Value" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Descr" Type="Edm.String" Nullable="false" MaxLength="60" sap:unicode="false" sap:label="Short text" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="TASKTY_F4_HELP" sap:label="Task Type F4 Help" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Value"/>
+                </Key>
+                <Property Name="Value" Type="Edm.String" Nullable="false" MaxLength="10" sap:text="Descr" sap:unicode="false" sap:label="Lower Value" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Descr" Type="Edm.String" Nullable="false" MaxLength="60" sap:unicode="false" sap:label="Short text" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="WERKS_F4_HELP" sap:label="DC F4 Help" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Werks"/>
+                </Key>
+                <Property Name="Werks" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Site" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Sort2" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Search Term 2" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Sort1" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Search Term 1" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="PostCode1" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Postal Code" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="City1" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="City" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Name2" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Name 2" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Name1" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Name" sap:creatable="false" sap:updatable="false"/>
+            </EntityType>
+            <EntityType Name="MATNR_F4_HELP" sap:label="Material F4 Help" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Display_Matnr"/>
+                </Key>
+                <Property Name="Display_Matnr" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Display Article" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Display_Matnr_T" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Display Article Description" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Single_Matnr" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Single Article" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Variant_Matnr" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Variant Article" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Generic_Matnr" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Generic Article" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+            </EntityType>
+            <EntityType Name="PRODH_F4_HELP" sap:label="Product Hierarchy F4 Help" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Prodh"/>
+                </Key>
+                <Property Name="Prodh" Type="Edm.String" Nullable="false" MaxLength="18" sap:unicode="false" sap:label="Prod.hierarchy" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Stufe" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Level number" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="ProdhT" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+            </EntityType>
+            <EntityType Name="MTART_F4_HELP" sap:label="Article Type F4 HELP" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Mtart"/>
+                </Key>
+                <Property Name="Mtart" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Article type" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="MtartT" Type="Edm.String" Nullable="false" MaxLength="25" sap:unicode="false" sap:label="Art.Type Descr." sap:creatable="false" sap:updatable="false"/>
+            </EntityType>
+            <EntityType Name="HIERNODE2_F4_HELP" sap:label="Article Comodity Group F4 HELP" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Comm_Grp"/>
+                </Key>
+                <Property Name="Comm_Grp" Type="Edm.String" Nullable="false" MaxLength="18" sap:unicode="false" sap:label="Commodity Group" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Comm_Grp_Txt" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Commodity Group Name" sap:creatable="false" sap:updatable="false"/>
+            </EntityType>
+            <EntityType Name="HIERNODE4_F4_HELP" sap:label="Article Sub-Comodity Group F4 HELP" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Node"/>
+                </Key>
+                <Property Name="Node" Type="Edm.String" Nullable="false" MaxLength="18" sap:unicode="false" sap:label="Node" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Comm_Grp" Type="Edm.String" Nullable="false" MaxLength="18" sap:unicode="false" sap:label="Commodity Group" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Comm_Grp_Txt" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Commodity Group Description" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Sub_Comm_Grp" Type="Edm.String" Nullable="false" MaxLength="18" sap:unicode="false" sap:label="Sub Commodity Group" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Sub_Comm_Grp_Txt" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Sub Commodity Group Description" sap:creatable="false" sap:updatable="false"/>
+            </EntityType>
+            <EntityType Name="USER_F4_HELP" sap:label="User F4 Help" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="User"/>
+                </Key>
+                <Property Name="User" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="User" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="255" sap:unicode="false" sap:label="Name" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Rgroup" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Receiver Group" sap:creatable="false" sap:updatable="false" sap:value-list="standard"/>
+            </EntityType>
+            <EntityType Name="ART_INFO" sap:label="Article Information" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Fname"/>
+                    <PropertyRef Name="Taskid"/>
+                    <PropertyRef Name="Group"/>
+                    <PropertyRef Name="Sortn"/>
+                </Key>
+                <Property Name="Fname" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Field Name" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="OutputOld" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Value + Description At Event Time" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="OutputNew" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Value + Description Current" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="RowCriticality" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Row Criticality" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Taskid" Type="Edm.Guid" Nullable="false" sap:unicode="false" sap:label="Task ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="FnameT" Type="Edm.String" Nullable="false" MaxLength="80" sap:unicode="false" sap:label="Description" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Group" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Group Technical Name" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="GroupT" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Group" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Sortn" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Sort number" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="ValueOld" Type="Edm.String" Nullable="false" MaxLength="255" sap:unicode="false" sap:label="Value At Event Time" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ValueTOld" Type="Edm.String" Nullable="false" MaxLength="255" sap:unicode="false" sap:label="Value Description At Event Time" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ValueNew" Type="Edm.String" Nullable="false" MaxLength="255" sap:unicode="false" sap:label="Value Current" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ValueTNew" Type="Edm.String" Nullable="false" MaxLength="255" sap:unicode="false" sap:label="Value Description Current" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="MULTI_ART_INFO" sap:label="Multiple Article Information" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Taskid"/>
+                    <PropertyRef Name="Stage"/>
+                    <PropertyRef Name="MatnrDisp"/>
+                </Key>
+                <Property Name="MatnrSingle" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Single ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Taskid" Type="Edm.Guid" Nullable="false" sap:unicode="false" sap:label="Task ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Hiernode3" Type="Edm.String" Nullable="false" MaxLength="18" sap:unicode="false" sap:label="ALDI Commodity Group" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="MatnrSingleT" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Single ID Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Stage" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Data Stage" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Hiernode3T" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="ALDI Commodity Group Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="StageT" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Data Stage Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="MatnrDisp" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Display ID" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="MatnrDispT" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Display ID Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="MatnrGeneric" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Generic ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="MatnrGenericT" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Generic ID Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Hiernode2" Type="Edm.String" Nullable="false" MaxLength="18" sap:unicode="false" sap:label="ALDI Category" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Hiernode2T" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="ALDI Category Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Hiernode4" Type="Edm.String" Nullable="false" MaxLength="18" sap:unicode="false" sap:label="ALDI Sub-Commodity Group" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Hiernode4T" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="ALDI Sub-Commodity Group Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Meins" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Base Unit" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="unit-of-measure"/>
+                <Property Name="MeinsT" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Base Unit Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="BrandId" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Article Brand" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="BrandIdT" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Article Brand Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Vpreh" Type="Edm.Decimal" Nullable="false" Precision="5" Scale="0" sap:unicode="false" sap:label="Comp.price unit" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Inhal" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3" sap:unicode="false" sap:label="Net contents" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Mtart" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Article type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="MtartT" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Article type Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Tragr" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Trans. Group" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TragrT" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Trans. Group Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Tempb" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Temperature" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TempbT" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Temperature Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Mhdhb" Type="Edm.Decimal" Nullable="false" Precision="4" Scale="0" sap:unicode="false" sap:label="Tot. shelf life" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Mhdrz" Type="Edm.Decimal" Nullable="false" Precision="4" Scale="0" sap:unicode="false" sap:label="Rem. Shelf Life" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Iprkz" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Period Ind." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="IprkzT" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Period Ind. Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Brgew" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3" sap:unicode="false" sap:label="Gross weight" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Ntgew" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3" sap:unicode="false" sap:label="Net weight" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Gewei" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Weight unit" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="unit-of-measure"/>
+                <Property Name="Hoehe" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3" sap:unicode="false" sap:label="Height" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Breit" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3" sap:unicode="false" sap:label="Width" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Laeng" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3" sap:unicode="false" sap:label="Length" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Meabm" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Unit" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="unit-of-measure"/>
+                <Property Name="Taklv" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Tax class." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Ekgrp" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Purch. Group" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="EkgrpT" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Purch. Group Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Volum" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3" sap:unicode="false" sap:label="Volume" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Voleh" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Volume unit" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="unit-of-measure"/>
+                <Property Name="VolehT" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Volume unit Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="RowCriticality" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Row Criticality" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="EKGRP_F4_HELP" sap:label="Purchasing Groups F4 Help" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Ekgrp"/>
+                </Key>
+                <Property Name="Ekgrp" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Purch. Group" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Eknam" Type="Edm.String" Nullable="false" MaxLength="18" sap:unicode="false" sap:label="Description" sap:creatable="false" sap:updatable="false"/>
+            </EntityType>
+            <EntityType Name="PUR_DOC_INFO" sap:label="Purchasing Document Information" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Taskid"/>
+                    <PropertyRef Name="Stage"/>
+                    <PropertyRef Name="Ebeln"/>
+                </Key>
+                <Property Name="Bstyp" Type="Edm.String" Nullable="false" MaxLength="1" sap:text="BstypT" sap:unicode="false" sap:label="Doc. Category" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Taskid" Type="Edm.Guid" Nullable="false" sap:unicode="false" sap:label="Task ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="BstypT" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Doc. Category Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Stage" Type="Edm.String" Nullable="false" MaxLength="1" sap:text="StageT" sap:unicode="false" sap:label="Data Stage" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="BsartT" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Document Type Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="StageT" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Data Stage Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Ebeln" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Purchasing Doc." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Bsart" Type="Edm.String" Nullable="false" MaxLength="4" sap:text="BsartT" sap:unicode="false" sap:label="Document Type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Kdatb" Type="Edm.DateTime" Precision="7" sap:display-format="Date" sap:unicode="false" sap:label="Validity Start" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Kdate" Type="Edm.DateTime" Precision="7" sap:display-format="Date" sap:unicode="false" sap:label="Validity End" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Lifnr" Type="Edm.String" Nullable="false" MaxLength="10" sap:text="LifnrT" sap:unicode="false" sap:label="Vendor ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="LifnrT" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Vendor Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Parhu" Type="Edm.String" Nullable="false" MaxLength="10" sap:text="ParhuT" sap:unicode="false" sap:label="HUB ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ParhuT" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="HUB Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Parwl" Type="Edm.String" Nullable="false" MaxLength="10" sap:text="ParwlT" sap:unicode="false" sap:label="GS ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ParwlT" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="GS Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="RowCriticality" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Row Criticality" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="PUR_ITEM_INFO" sap:label="Purchasing Document Item Information" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Taskid"/>
+                    <PropertyRef Name="Stage"/>
+                    <PropertyRef Name="Ebeln"/>
+                    <PropertyRef Name="Ebelp"/>
+                </Key>
+                <Property Name="MeinsT" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Base Unit Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Taskid" Type="Edm.Guid" Nullable="false" sap:unicode="false" sap:label="Task ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Stage" Type="Edm.String" Nullable="false" MaxLength="1" sap:text="StageT" sap:unicode="false" sap:label="Data Stage" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="StageT" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Data Stage Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Ebeln" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Purchasing Doc." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Ebelp" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="Item" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Matnr" Type="Edm.String" Nullable="false" MaxLength="40" sap:text="MatnrT" sap:unicode="false" sap:label="Display ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="MatnrT" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Display ID Descr." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Werks" Type="Edm.String" Nullable="false" MaxLength="4" sap:text="WerksT" sap:unicode="false" sap:label="Distr. center" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="WerksT" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Distr. center Descr." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Inco1" Type="Edm.String" Nullable="false" MaxLength="3" sap:text="Inco1T" sap:unicode="false" sap:label="Incoterms" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Inco1T" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Incoterms Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Ktmng" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Target Quantity" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Meins" Type="Edm.String" Nullable="false" MaxLength="3" sap:text="MeinsT" sap:unicode="false" sap:label="Base Unit" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="unit-of-measure"/>
+                <Property Name="RowCriticality" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Row Criticality" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="PROMO_INFO" sap:label="Promotion Information" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Taskid"/>
+                    <PropertyRef Name="Stage"/>
+                    <PropertyRef Name="Aktnr"/>
+                </Key>
+                <Property Name="AktypT" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Promotion Cat. Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Taskid" Type="Edm.Guid" Nullable="false" sap:unicode="false" sap:label="Task ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZpromotionStatus" Type="Edm.String" Nullable="false" MaxLength="2" sap:text="ZpromotionStatusT" sap:unicode="false" sap:label="Promotion Status" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="AkartT" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Promotion Type Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Stage" Type="Edm.String" Nullable="false" MaxLength="1" sap:text="StageT" sap:unicode="false" sap:label="Data Stage" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZpromotionStatusT" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Promotion Status Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="StageT" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Data Stage Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Aktnr" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Promotion" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Aktyp" Type="Edm.String" Nullable="false" MaxLength="4" sap:text="AktypT" sap:unicode="false" sap:label="Promotion Cat." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Akart" Type="Edm.String" Nullable="false" MaxLength="4" sap:text="AkartT" sap:unicode="false" sap:label="Promotion Type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Vkdab" Type="Edm.DateTime" Precision="7" sap:display-format="Date" sap:unicode="false" sap:label="On sale from" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Vkdbi" Type="Edm.DateTime" Precision="7" sap:display-format="Date" sap:unicode="false" sap:label="On sale to" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="RowCriticality" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Row Criticality" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="FPRFM_F4_HELP" sap:label="Distribution Profile F4 Help" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Fprfm"/>
+                </Key>
+                <Property Name="Fprfm" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Distribution Profile" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="FprfmT" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Distribution Profile Description" sap:creatable="false" sap:updatable="false"/>
+            </EntityType>
+            <EntityType Name="INCO1_F4_HELP" sap:label="Incoterms F4 Help" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Inco1"/>
+                </Key>
+                <Property Name="Inco1" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Incoterms" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Inco1T" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Incoterms Description" sap:creatable="false" sap:updatable="false"/>
+            </EntityType>
+            <EntityType Name="AKTYP_F4_HELP" sap:label="Promotion Category F4 Help" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Aktyp"/>
+                </Key>
+                <Property Name="Aktyp" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Promotion Category" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="AktypT" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Promotion Category Description" sap:creatable="false" sap:updatable="false"/>
+            </EntityType>
+            <EntityType Name="AKART_F4_HELP" sap:label="Promotion Type F4 Help" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Akart"/>
+                </Key>
+                <Property Name="Akart" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Promotion Type" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="AkartT" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Promotion Type Description" sap:creatable="false" sap:updatable="false"/>
+            </EntityType>
+            <EntityType Name="ZPROMOTION_STATUS_F4_HELP" sap:label="Promotion Status F4 Help" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Value"/>
+                </Key>
+                <Property Name="Value" Type="Edm.String" Nullable="false" MaxLength="10" sap:text="Descr" sap:unicode="false" sap:label="Promotion Status" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Descr" Type="Edm.String" Nullable="false" MaxLength="60" sap:unicode="false" sap:label="Promotion Status Description" sap:creatable="false" sap:updatable="false"/>
+            </EntityType>
+            <EntityType Name="BSTYP_F4_HELP" sap:label="Purchasing Document Category" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Value"/>
+                </Key>
+                <Property Name="Value" Type="Edm.String" Nullable="false" MaxLength="10" sap:text="Descr" sap:unicode="false" sap:label="Purchasing Document Category" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Descr" Type="Edm.String" Nullable="false" MaxLength="60" sap:unicode="false" sap:label="Purchasing Document Category Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="BSART_F4_HELP" sap:label="Purchasing Document Types F4 Help" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Bsart"/>
+                    <PropertyRef Name="Bstyp"/>
+                </Key>
+                <Property Name="Bsart" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Purchasing Document Type" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="BsartT" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Purchasing Document Type Description" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Bstyp" Type="Edm.String" Nullable="false" MaxLength="1" sap:text="BstypT" sap:unicode="false" sap:label="Purchasing Document Category" sap:creatable="false" sap:updatable="false" sap:value-list="fixed-values"/>
+                <Property Name="BstypT" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Purchasing Document Category Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="STEP_CHG_INFO" sap:label="Step Changed Data Information" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Taskid"/>
+                    <PropertyRef Name="Stepid"/>
+                    <PropertyRef Name="Sortn"/>
+                </Key>
+                <Property Name="Taskid" Type="Edm.Guid" Nullable="false" sap:unicode="false" sap:label="Task ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Stepid" Type="Edm.Guid" Nullable="false" sap:unicode="false" sap:label="Step ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Block" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Change Data Block" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="BlockT" Type="Edm.String" Nullable="false" MaxLength="80" sap:unicode="false" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="Sortn" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Sort number" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="Key" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="String" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fname" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Field Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="FnameT" Type="Edm.String" Nullable="false" MaxLength="80" sap:unicode="false" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ValueOld" Type="Edm.String" Nullable="false" MaxLength="255" sap:unicode="false" sap:label="Value" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ValueNew" Type="Edm.String" Nullable="false" MaxLength="255" sap:unicode="false" sap:label="Value" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="STEP_ART_INFO" sap:label="Step Article Information" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Taskid"/>
+                    <PropertyRef Name="Stepid"/>
+                    <PropertyRef Name="Sortn"/>
+                </Key>
+                <Property Name="Taskid" Type="Edm.Guid" Nullable="false" sap:unicode="false" sap:label="Task ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Stepid" Type="Edm.Guid" Nullable="false" sap:unicode="false" sap:label="Step ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Group" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Group" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="GroupT" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="String" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Sortn" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Sort number" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="Fname" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Field Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="FnameT" Type="Edm.String" Nullable="false" MaxLength="80" sap:unicode="false" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Value" Type="Edm.String" Nullable="false" MaxLength="255" sap:unicode="false" sap:label="Value" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ValueT" Type="Edm.String" Nullable="false" MaxLength="255" sap:unicode="false" sap:label="Value" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="STEP_DC_INFO" sap:label="Step DC Information" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Taskid"/>
+                    <PropertyRef Name="Stepid"/>
+                    <PropertyRef Name="Werks"/>
+                </Key>
+                <Property Name="Taskid" Type="Edm.Guid" Nullable="false" sap:unicode="false" sap:label="Task ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Stepid" Type="Edm.Guid" Nullable="false" sap:unicode="false" sap:label="Step ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Werks" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Distr. center" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="Mmsta" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="P-S artl status" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="MmstaT" Type="Edm.String" Nullable="false" MaxLength="25" sap:unicode="false" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Mmstd" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Valid From" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Oaid" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="Order area ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="OaidT" Type="Edm.String" Nullable="false" MaxLength="25" sap:unicode="false" sap:label="Order area desc" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Datab" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Listing Valid From" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Datbi" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Listing Valid To" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Dispo" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Stock Planner" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Stawn" Type="Edm.String" Nullable="false" MaxLength="17" sap:unicode="false" sap:label="Commodity Code" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="StawnT" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="FolupArtNr" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="FU/Repl. Article" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="FolupArtNrT" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Land1" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Country" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="STEP_DC_SALES_INFO" sap:label="Step DC Sales Information" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Taskid"/>
+                    <PropertyRef Name="Stepid"/>
+                    <PropertyRef Name="Vkorg"/>
+                    <PropertyRef Name="Vtweg"/>
+                </Key>
+                <Property Name="Taskid" Type="Edm.Guid" Nullable="false" sap:unicode="false" sap:label="Task ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Stepid" Type="Edm.Guid" Nullable="false" sap:unicode="false" sap:label="Step ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Vkorg" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Sales Org." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Vtweg" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Distr. Channel" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Prodh" Type="Edm.String" Nullable="false" MaxLength="18" sap:unicode="false" sap:label="Prod.hierarchy" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ProdhT" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Prat3" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="WarrantyRlvnt" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Prat1" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Drop shipment" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZzagerVal" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Age Restriction" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZzagerValT" Type="Edm.String" Nullable="false" MaxLength="60" sap:unicode="false" sap:label="Short Descript." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="STEP_UOM_INFO" sap:label="Step UoM Information" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Taskid"/>
+                    <PropertyRef Name="Stepid"/>
+                    <PropertyRef Name="Meinh"/>
+                </Key>
+                <Property Name="Taskid" Type="Edm.Guid" Nullable="false" sap:unicode="false" sap:label="Task ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Stepid" Type="Edm.Guid" Nullable="false" sap:unicode="false" sap:label="Step ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Meinh" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Unit of Measure" sap:creatable="false" sap:updatable="false" sap:filterable="false" sap:semantics="unit-of-measure"/>
+                <Property Name="MeinhT" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="UoM Text" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Umrez" Type="Edm.Decimal" Nullable="false" Precision="5" Scale="0" sap:unicode="false" sap:label="Counter" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Mesub" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Lower-lev. unit" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="unit-of-measure"/>
+            </EntityType>
+            <EntityType Name="SEND_COMMUNICATION" m:HasStream="true" sap:label="Send Communication (Email with PDF)" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Taskid"/>
+                </Key>
+                <Property Name="Taskid" Type="Edm.Guid" Nullable="false" sap:unicode="false" sap:label="Task ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="EmailPdfType" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="String" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="EmailTo" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="String" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="EmailCc" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="String" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="EmailSubject" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="String" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="EmailBody" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="String" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="EmailPdf" Type="Edm.Binary" Nullable="false" sap:unicode="false" sap:label="Value" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="TRIGER_F4_HELP" sap:label="Trigger F4 Help" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Triger"/>
+                </Key>
+                <Property Name="Triger" Type="Edm.String" Nullable="false" MaxLength="30" sap:text="TrigerT" sap:unicode="false" sap:label="Trigger" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="TrigerT" Type="Edm.String" Nullable="false" MaxLength="80" sap:unicode="false" sap:label="Description" sap:creatable="false" sap:updatable="false"/>
+            </EntityType>
+            <EntityType Name="RGROUP_F4_HELP" sap:label="Receiver Group F4 Help" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Rgroup"/>
+                </Key>
+                <Property Name="Rgroup" Type="Edm.String" Nullable="false" MaxLength="30" sap:text="RgroupT" sap:unicode="false" sap:label="Receiver Group" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="RgroupT" Type="Edm.String" Nullable="false" MaxLength="80" sap:unicode="false" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="TRAGR_F4_HELP" sap:label="Transportation Group F4 Help" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Tragr"/>
+                </Key>
+                <Property Name="Tragr" Type="Edm.String" Nullable="false" MaxLength="4" sap:text="TragrT" sap:unicode="false" sap:label="Trans. Group" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="TragrT" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Description" sap:creatable="false" sap:updatable="false"/>
+            </EntityType>
+            <EntityType Name="MMSTA_F4_HELP" sap:label="Site Article Status F4 Help" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Mmsta"/>
+                </Key>
+                <Property Name="Mmsta" Type="Edm.String" Nullable="false" MaxLength="2" sap:text="MmstaT" sap:unicode="false" sap:label="P-S artl status" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="MmstaT" Type="Edm.String" Nullable="false" MaxLength="25" sap:unicode="false" sap:label="Description" sap:creatable="false" sap:updatable="false"/>
+            </EntityType>
+            <EntityType Name="DISPO_F4_HELP" sap:label="Stock Planner F4 Help" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Dispo"/>
+                </Key>
+                <Property Name="Dispo" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Stock Planner" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Dsnam" Type="Edm.String" Nullable="false" MaxLength="18" sap:unicode="false" sap:label="Controller name" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Dstel" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Tel. no. stock plnr." sap:creatable="false" sap:updatable="false"/>
+            </EntityType>
+            <EntityType Name="ALL_USER_F4_HELP" sap:label="All Users F4 Help" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="User"/>
+                </Key>
+                <Property Name="User" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="User" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="255" sap:unicode="false" sap:label="User Name" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Rgroup" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Receiver Group" sap:creatable="false" sap:updatable="false" sap:value-list="standard"/>
+            </EntityType>
+            <EntityType Name="TILE_DATA" sap:label="Tile Data" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="User"/>
+                </Key>
+                <Property Name="User" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="User" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Messages" Type="Edm.Int32" Nullable="false" sap:unicode="false" sap:label="Amount of Messages" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <ComplexType Name="RETURN_DATA">
+                <Property Name="Taskid" Type="Edm.Guid" sap:label="Task ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Type" Type="Edm.String" MaxLength="1" sap:label="Message type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Message" Type="Edm.String" MaxLength="220" sap:label="Message Text" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </ComplexType>
+            <ComplexType Name="RETURN_PDF">
+                <Property Name="Taskid" Type="Edm.Guid" Nullable="false" sap:label="Task ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Html" Type="Edm.String" Nullable="false" sap:label="String" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </ComplexType>
+            <Association Name="Step_Art_Info" sap:content-version="1" sap:label="Step -&gt; Article Information">
+                <End Type="ZACDC_MANAGE_TASK_SRV.STEPS" Multiplicity="1" Role="FromRole_Step_Art_Info"/>
+                <End Type="ZACDC_MANAGE_TASK_SRV.STEP_ART_INFO" Multiplicity="*" Role="ToRole_Step_Art_Info"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_Step_Art_Info">
+                        <PropertyRef Name="Stepid"/>
+                        <PropertyRef Name="Taskid"/>
+                    </Principal>
+                    <Dependent Role="ToRole_Step_Art_Info">
+                        <PropertyRef Name="Stepid"/>
+                        <PropertyRef Name="Taskid"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="Step_Dc_Info" sap:content-version="1" sap:label="Step -&gt; DC Information">
+                <End Type="ZACDC_MANAGE_TASK_SRV.STEPS" Multiplicity="1" Role="FromRole_Step_Dc_Info"/>
+                <End Type="ZACDC_MANAGE_TASK_SRV.STEP_DC_INFO" Multiplicity="*" Role="ToRole_Step_Dc_Info"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_Step_Dc_Info">
+                        <PropertyRef Name="Stepid"/>
+                        <PropertyRef Name="Taskid"/>
+                    </Principal>
+                    <Dependent Role="ToRole_Step_Dc_Info">
+                        <PropertyRef Name="Stepid"/>
+                        <PropertyRef Name="Taskid"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="Step_Dc_Sales_Info" sap:content-version="1" sap:label="Step -&gt; DC Sales Information">
+                <End Type="ZACDC_MANAGE_TASK_SRV.STEPS" Multiplicity="1" Role="FromRole_Step_Dc_Sales_Info"/>
+                <End Type="ZACDC_MANAGE_TASK_SRV.STEP_DC_SALES_INFO" Multiplicity="*" Role="ToRole_Step_Dc_Sales_Info"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_Step_Dc_Sales_Info">
+                        <PropertyRef Name="Stepid"/>
+                        <PropertyRef Name="Taskid"/>
+                    </Principal>
+                    <Dependent Role="ToRole_Step_Dc_Sales_Info">
+                        <PropertyRef Name="Stepid"/>
+                        <PropertyRef Name="Taskid"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="Step_Uom_Info" sap:content-version="1" sap:label="Step -&gt; Arcticle UoM Information">
+                <End Type="ZACDC_MANAGE_TASK_SRV.STEPS" Multiplicity="1" Role="FromRole_Step_Uom_Info"/>
+                <End Type="ZACDC_MANAGE_TASK_SRV.STEP_UOM_INFO" Multiplicity="*" Role="ToRole_Step_Uom_Info"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_Step_Uom_Info">
+                        <PropertyRef Name="Stepid"/>
+                        <PropertyRef Name="Taskid"/>
+                    </Principal>
+                    <Dependent Role="ToRole_Step_Uom_Info">
+                        <PropertyRef Name="Stepid"/>
+                        <PropertyRef Name="Taskid"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="Step_Chg_Info" sap:content-version="1" sap:label="Step -&gt; Changed Data Information">
+                <End Type="ZACDC_MANAGE_TASK_SRV.STEPS" Multiplicity="1" Role="FromRole_Step_Chg_Info"/>
+                <End Type="ZACDC_MANAGE_TASK_SRV.STEP_CHG_INFO" Multiplicity="*" Role="ToRole_Step_Chg_Info"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_Step_Chg_Info">
+                        <PropertyRef Name="Stepid"/>
+                        <PropertyRef Name="Taskid"/>
+                    </Principal>
+                    <Dependent Role="ToRole_Step_Chg_Info">
+                        <PropertyRef Name="Stepid"/>
+                        <PropertyRef Name="Taskid"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="Task_Dc_Info" sap:content-version="1" sap:label="Task -&gt; DC Information">
+                <End Type="ZACDC_MANAGE_TASK_SRV.TASK" Multiplicity="1" Role="FromRole_Task_Dc_Info"/>
+                <End Type="ZACDC_MANAGE_TASK_SRV.DC_INFO" Multiplicity="*" Role="ToRole_Task_Dc_Info"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_Task_Dc_Info">
+                        <PropertyRef Name="Taskid"/>
+                    </Principal>
+                    <Dependent Role="ToRole_Task_Dc_Info">
+                        <PropertyRef Name="Taskid"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="Task_Dc_Sales_Info" sap:content-version="1" sap:label="Task -&gt; DC Sales Information">
+                <End Type="ZACDC_MANAGE_TASK_SRV.TASK" Multiplicity="1" Role="FromRole_Task_Dc_Sales_Info"/>
+                <End Type="ZACDC_MANAGE_TASK_SRV.DC_SALES_INFO" Multiplicity="*" Role="ToRole_Task_Dc_Sales_Info"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_Task_Dc_Sales_Info">
+                        <PropertyRef Name="Taskid"/>
+                    </Principal>
+                    <Dependent Role="ToRole_Task_Dc_Sales_Info">
+                        <PropertyRef Name="Taskid"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="Task_Uom_Info" sap:content-version="1" sap:label="Task -&gt; Arcticle UoM Information">
+                <End Type="ZACDC_MANAGE_TASK_SRV.TASK" Multiplicity="1" Role="FromRole_Task_Uom_Info"/>
+                <End Type="ZACDC_MANAGE_TASK_SRV.UOM_INFO" Multiplicity="*" Role="ToRole_Task_Uom_Info"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_Task_Uom_Info">
+                        <PropertyRef Name="Taskid"/>
+                    </Principal>
+                    <Dependent Role="ToRole_Task_Uom_Info">
+                        <PropertyRef Name="Taskid"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="Task_Note_Info" sap:content-version="1" sap:label="Task -&gt; Notes">
+                <End Type="ZACDC_MANAGE_TASK_SRV.TASK" Multiplicity="1" Role="FromRole_Task_Note_Info"/>
+                <End Type="ZACDC_MANAGE_TASK_SRV.NOTE_INFO" Multiplicity="*" Role="ToRole_Task_Note_Info"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_Task_Note_Info">
+                        <PropertyRef Name="Taskid"/>
+                    </Principal>
+                    <Dependent Role="ToRole_Task_Note_Info">
+                        <PropertyRef Name="Taskid"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="Task_File_Info" sap:content-version="1" sap:label="Task -&gt; Attachments">
+                <End Type="ZACDC_MANAGE_TASK_SRV.TASK" Multiplicity="1" Role="FromRole_Task_File_Info"/>
+                <End Type="ZACDC_MANAGE_TASK_SRV.FILE_INFO" Multiplicity="*" Role="ToRole_Task_File_Info"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_Task_File_Info">
+                        <PropertyRef Name="Taskid"/>
+                    </Principal>
+                    <Dependent Role="ToRole_Task_File_Info">
+                        <PropertyRef Name="Taskid"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="Task_Steps" sap:content-version="1" sap:label="Task -&gt; Steps">
+                <End Type="ZACDC_MANAGE_TASK_SRV.TASK" Multiplicity="1" Role="FromRole_Task_Steps"/>
+                <End Type="ZACDC_MANAGE_TASK_SRV.STEPS" Multiplicity="*" Role="ToRole_Task_Steps"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_Task_Steps">
+                        <PropertyRef Name="Taskid"/>
+                    </Principal>
+                    <Dependent Role="ToRole_Task_Steps">
+                        <PropertyRef Name="Taskid"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="Task_Chg_Info" sap:content-version="1" sap:label="Task -&gt; Changed Data Information">
+                <End Type="ZACDC_MANAGE_TASK_SRV.TASK" Multiplicity="1" Role="FromRole_Task_Chg_Info"/>
+                <End Type="ZACDC_MANAGE_TASK_SRV.CHG_INFO" Multiplicity="*" Role="ToRole_Task_Chg_Info"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_Task_Chg_Info">
+                        <PropertyRef Name="Taskid"/>
+                    </Principal>
+                    <Dependent Role="ToRole_Task_Chg_Info">
+                        <PropertyRef Name="Taskid"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="Task_Multi_Art_Info" sap:content-version="1" sap:label="Task -&gt; Multiple Article Information">
+                <End Type="ZACDC_MANAGE_TASK_SRV.TASK" Multiplicity="1" Role="FromRole_Task_Multi_Art_Info"/>
+                <End Type="ZACDC_MANAGE_TASK_SRV.MULTI_ART_INFO" Multiplicity="*" Role="ToRole_Task_Multi_Art_Info"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_Task_Multi_Art_Info">
+                        <PropertyRef Name="Taskid"/>
+                    </Principal>
+                    <Dependent Role="ToRole_Task_Multi_Art_Info">
+                        <PropertyRef Name="Taskid"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="Task_Pur_Item_Info" sap:content-version="1" sap:label="Task -&gt; Purchasing Document Item Information">
+                <End Type="ZACDC_MANAGE_TASK_SRV.TASK" Multiplicity="1" Role="FromRole_Task_Pur_Item_Info"/>
+                <End Type="ZACDC_MANAGE_TASK_SRV.PUR_ITEM_INFO" Multiplicity="*" Role="ToRole_Task_Pur_Item_Info"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_Task_Pur_Item_Info">
+                        <PropertyRef Name="Taskid"/>
+                    </Principal>
+                    <Dependent Role="ToRole_Task_Pur_Item_Info">
+                        <PropertyRef Name="Taskid"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="Task_Pur_Doc_Info" sap:content-version="1" sap:label="Task -&gt; Purchasing Document Information">
+                <End Type="ZACDC_MANAGE_TASK_SRV.TASK" Multiplicity="1" Role="FromRole_Task_Pur_Doc_Info"/>
+                <End Type="ZACDC_MANAGE_TASK_SRV.PUR_DOC_INFO" Multiplicity="*" Role="ToRole_Task_Pur_Doc_Info"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_Task_Pur_Doc_Info">
+                        <PropertyRef Name="Taskid"/>
+                    </Principal>
+                    <Dependent Role="ToRole_Task_Pur_Doc_Info">
+                        <PropertyRef Name="Taskid"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="Task_Promo_Info" sap:content-version="1" sap:label="Task -&gt; Promotion Information">
+                <End Type="ZACDC_MANAGE_TASK_SRV.TASK" Multiplicity="1" Role="FromRole_Task_Promo_Info"/>
+                <End Type="ZACDC_MANAGE_TASK_SRV.PROMO_INFO" Multiplicity="*" Role="ToRole_Task_Promo_Info"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_Task_Promo_Info">
+                        <PropertyRef Name="Taskid"/>
+                    </Principal>
+                    <Dependent Role="ToRole_Task_Promo_Info">
+                        <PropertyRef Name="Taskid"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="Task_Art_Info" sap:content-version="1" sap:label="Task -&gt; Article Information">
+                <End Type="ZACDC_MANAGE_TASK_SRV.TASK" Multiplicity="1" Role="FromRole_Task_Art_Info"/>
+                <End Type="ZACDC_MANAGE_TASK_SRV.ART_INFO" Multiplicity="*" Role="ToRole_Task_Art_Info"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_Task_Art_Info">
+                        <PropertyRef Name="Taskid"/>
+                    </Principal>
+                    <Dependent Role="ToRole_Task_Art_Info">
+                        <PropertyRef Name="Taskid"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <EntityContainer Name="ZACDC_MANAGE_TASK_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="ALDI_CAT_F4_HELPSet" EntityType="ZACDC_MANAGE_TASK_SRV.ALDI_CAT_F4_HELP" sap:label="ALDI Category F4 Help Set" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="DC_INFOSet" EntityType="ZACDC_MANAGE_TASK_SRV.DC_INFO" sap:label="DC Information Set" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="DC_SALES_INFOSet" EntityType="ZACDC_MANAGE_TASK_SRV.DC_SALES_INFO" sap:label="DC Sales Information Set" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="UOM_INFOSet" EntityType="ZACDC_MANAGE_TASK_SRV.UOM_INFO" sap:label="Article UoM Information Set" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="TASKSet" EntityType="ZACDC_MANAGE_TASK_SRV.TASK" sap:label="Task Information" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="STEPSSet" EntityType="ZACDC_MANAGE_TASK_SRV.STEPS" sap:label="Steps Information" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="NOTE_INFOSet" EntityType="ZACDC_MANAGE_TASK_SRV.NOTE_INFO" sap:label="Note Information" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="FILE_INFOSet" EntityType="ZACDC_MANAGE_TASK_SRV.FILE_INFO" sap:label="Attachment Information" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="RETURNSet" EntityType="ZACDC_MANAGE_TASK_SRV.RETURN" sap:label="Return Messages Set" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="CHG_INFOSet" EntityType="ZACDC_MANAGE_TASK_SRV.CHG_INFO" sap:label="Changed Data Information" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="STATUS_F4_HELPSet" EntityType="ZACDC_MANAGE_TASK_SRV.STATUS_F4_HELP" sap:label="Status F4 Help" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="TASKTY_F4_HELPSet" EntityType="ZACDC_MANAGE_TASK_SRV.TASKTY_F4_HELP" sap:label="Task Type F4 Help" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="WERKS_F4_HELPSet" EntityType="ZACDC_MANAGE_TASK_SRV.WERKS_F4_HELP" sap:label="DC F4 Help" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="MATNR_F4_HELPSet" EntityType="ZACDC_MANAGE_TASK_SRV.MATNR_F4_HELP" sap:label="Material F4 Help" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="PRODH_F4_HELPSet" EntityType="ZACDC_MANAGE_TASK_SRV.PRODH_F4_HELP" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="MTART_F4_HELPSet" EntityType="ZACDC_MANAGE_TASK_SRV.MTART_F4_HELP" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="HIERNODE2_F4_HELPSet" EntityType="ZACDC_MANAGE_TASK_SRV.HIERNODE2_F4_HELP" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="HIERNODE4_F4_HELPSet" EntityType="ZACDC_MANAGE_TASK_SRV.HIERNODE4_F4_HELP" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="USER_F4_HELPSet" EntityType="ZACDC_MANAGE_TASK_SRV.USER_F4_HELP" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="ART_INFOSet" EntityType="ZACDC_MANAGE_TASK_SRV.ART_INFO" sap:label="Article Information Set" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="MULTI_ART_INFOSet" EntityType="ZACDC_MANAGE_TASK_SRV.MULTI_ART_INFO" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="EKGRP_F4_HELPSet" EntityType="ZACDC_MANAGE_TASK_SRV.EKGRP_F4_HELP" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="PUR_DOC_INFOSet" EntityType="ZACDC_MANAGE_TASK_SRV.PUR_DOC_INFO" sap:label="Purchasing Document Information" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="PUR_ITEM_INFOSet" EntityType="ZACDC_MANAGE_TASK_SRV.PUR_ITEM_INFO" sap:label="Purchasing Document Item Information" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="PROMO_INFOSet" EntityType="ZACDC_MANAGE_TASK_SRV.PROMO_INFO" sap:label="Promotion Information" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="FPRFM_F4_HELPSet" EntityType="ZACDC_MANAGE_TASK_SRV.FPRFM_F4_HELP" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="INCO1_F4_HELPSet" EntityType="ZACDC_MANAGE_TASK_SRV.INCO1_F4_HELP" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="AKTYP_F4_HELPSet" EntityType="ZACDC_MANAGE_TASK_SRV.AKTYP_F4_HELP" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="AKART_F4_HELPSet" EntityType="ZACDC_MANAGE_TASK_SRV.AKART_F4_HELP" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="ZPROMOTION_STATUS_F4_HELPSet" EntityType="ZACDC_MANAGE_TASK_SRV.ZPROMOTION_STATUS_F4_HELP" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="BSTYP_F4_HELPSet" EntityType="ZACDC_MANAGE_TASK_SRV.BSTYP_F4_HELP" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="BSART_F4_HELPSet" EntityType="ZACDC_MANAGE_TASK_SRV.BSART_F4_HELP" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="STEP_CHG_INFOSet" EntityType="ZACDC_MANAGE_TASK_SRV.STEP_CHG_INFO" sap:label="Step Changed Data Information" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="STEP_ART_INFOSet" EntityType="ZACDC_MANAGE_TASK_SRV.STEP_ART_INFO" sap:label="Step Article Information" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="STEP_DC_INFOSet" EntityType="ZACDC_MANAGE_TASK_SRV.STEP_DC_INFO" sap:label="Step DC Information" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="STEP_DC_SALES_INFOSet" EntityType="ZACDC_MANAGE_TASK_SRV.STEP_DC_SALES_INFO" sap:label="Step DC Sales Information" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="STEP_UOM_INFOSet" EntityType="ZACDC_MANAGE_TASK_SRV.STEP_UOM_INFO" sap:label="Step UoM Information" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="SEND_COMMUNICATIONSet" EntityType="ZACDC_MANAGE_TASK_SRV.SEND_COMMUNICATION" sap:label="Send Communication (Email with PDF)" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="TRIGER_F4_HELPSet" EntityType="ZACDC_MANAGE_TASK_SRV.TRIGER_F4_HELP" sap:label="Trigger F4 Help" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="RGROUP_F4_HELPSet" EntityType="ZACDC_MANAGE_TASK_SRV.RGROUP_F4_HELP" sap:label="Receiver Group F4 Help" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="TRAGR_F4_HELPSet" EntityType="ZACDC_MANAGE_TASK_SRV.TRAGR_F4_HELP" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="MMSTA_F4_HELPSet" EntityType="ZACDC_MANAGE_TASK_SRV.MMSTA_F4_HELP" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="DISPO_F4_HELPSet" EntityType="ZACDC_MANAGE_TASK_SRV.DISPO_F4_HELP" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="ALL_USER_F4_HELPSet" EntityType="ZACDC_MANAGE_TASK_SRV.ALL_USER_F4_HELP" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="TILE_DATASet" EntityType="ZACDC_MANAGE_TASK_SRV.TILE_DATA" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <AssociationSet Name="Task_Promo_Info_AssocSet" Association="ZACDC_MANAGE_TASK_SRV.Task_Promo_Info" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="TASKSet" Role="FromRole_Task_Promo_Info"/>
+                    <End EntitySet="PROMO_INFOSet" Role="ToRole_Task_Promo_Info"/>
+                </AssociationSet>
+                <AssociationSet Name="Step_Dc_Sales_InfoSet" Association="ZACDC_MANAGE_TASK_SRV.Step_Dc_Sales_Info" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="STEPSSet" Role="FromRole_Step_Dc_Sales_Info"/>
+                    <End EntitySet="STEP_DC_SALES_INFOSet" Role="ToRole_Step_Dc_Sales_Info"/>
+                </AssociationSet>
+                <AssociationSet Name="Step_Uom_InfoSet" Association="ZACDC_MANAGE_TASK_SRV.Step_Uom_Info" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="STEPSSet" Role="FromRole_Step_Uom_Info"/>
+                    <End EntitySet="STEP_UOM_INFOSet" Role="ToRole_Step_Uom_Info"/>
+                </AssociationSet>
+                <AssociationSet Name="Task_Uom_InfoSet" Association="ZACDC_MANAGE_TASK_SRV.Task_Uom_Info" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="TASKSet" Role="FromRole_Task_Uom_Info"/>
+                    <End EntitySet="UOM_INFOSet" Role="ToRole_Task_Uom_Info"/>
+                </AssociationSet>
+                <AssociationSet Name="Step_Chg_InfoSet" Association="ZACDC_MANAGE_TASK_SRV.Step_Chg_Info" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="STEPSSet" Role="FromRole_Step_Chg_Info"/>
+                    <End EntitySet="STEP_CHG_INFOSet" Role="ToRole_Step_Chg_Info"/>
+                </AssociationSet>
+                <AssociationSet Name="Task_Dc_Sales_InfoSet" Association="ZACDC_MANAGE_TASK_SRV.Task_Dc_Sales_Info" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="TASKSet" Role="FromRole_Task_Dc_Sales_Info"/>
+                    <End EntitySet="DC_SALES_INFOSet" Role="ToRole_Task_Dc_Sales_Info"/>
+                </AssociationSet>
+                <AssociationSet Name="Task_Art_InfoSet" Association="ZACDC_MANAGE_TASK_SRV.Task_Art_Info" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="TASKSet" Role="FromRole_Task_Art_Info"/>
+                    <End EntitySet="ART_INFOSet" Role="ToRole_Task_Art_Info"/>
+                </AssociationSet>
+                <AssociationSet Name="Task_Pur_Doc_Info_AssocSet" Association="ZACDC_MANAGE_TASK_SRV.Task_Pur_Doc_Info" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="TASKSet" Role="FromRole_Task_Pur_Doc_Info"/>
+                    <End EntitySet="PUR_DOC_INFOSet" Role="ToRole_Task_Pur_Doc_Info"/>
+                </AssociationSet>
+                <AssociationSet Name="Task_Multi_Art_Info_AssocSet" Association="ZACDC_MANAGE_TASK_SRV.Task_Multi_Art_Info" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="TASKSet" Role="FromRole_Task_Multi_Art_Info"/>
+                    <End EntitySet="MULTI_ART_INFOSet" Role="ToRole_Task_Multi_Art_Info"/>
+                </AssociationSet>
+                <AssociationSet Name="Task_Pur_Item_Info_AssocSet" Association="ZACDC_MANAGE_TASK_SRV.Task_Pur_Item_Info" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="TASKSet" Role="FromRole_Task_Pur_Item_Info"/>
+                    <End EntitySet="PUR_ITEM_INFOSet" Role="ToRole_Task_Pur_Item_Info"/>
+                </AssociationSet>
+                <AssociationSet Name="Task_StepsSet" Association="ZACDC_MANAGE_TASK_SRV.Task_Steps" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="TASKSet" Role="FromRole_Task_Steps"/>
+                    <End EntitySet="STEPSSet" Role="ToRole_Task_Steps"/>
+                </AssociationSet>
+                <AssociationSet Name="Step_Art_InfoSet" Association="ZACDC_MANAGE_TASK_SRV.Step_Art_Info" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="STEPSSet" Role="FromRole_Step_Art_Info"/>
+                    <End EntitySet="STEP_ART_INFOSet" Role="ToRole_Step_Art_Info"/>
+                </AssociationSet>
+                <AssociationSet Name="Task_File_InfoSet" Association="ZACDC_MANAGE_TASK_SRV.Task_File_Info" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="TASKSet" Role="FromRole_Task_File_Info"/>
+                    <End EntitySet="FILE_INFOSet" Role="ToRole_Task_File_Info"/>
+                </AssociationSet>
+                <AssociationSet Name="Step_Dc_InfoSet" Association="ZACDC_MANAGE_TASK_SRV.Step_Dc_Info" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="STEPSSet" Role="FromRole_Step_Dc_Info"/>
+                    <End EntitySet="STEP_DC_INFOSet" Role="ToRole_Step_Dc_Info"/>
+                </AssociationSet>
+                <AssociationSet Name="Task_Note_InfoSet" Association="ZACDC_MANAGE_TASK_SRV.Task_Note_Info" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="TASKSet" Role="FromRole_Task_Note_Info"/>
+                    <End EntitySet="NOTE_INFOSet" Role="ToRole_Task_Note_Info"/>
+                </AssociationSet>
+                <AssociationSet Name="Task_Chg_InfoSet" Association="ZACDC_MANAGE_TASK_SRV.Task_Chg_Info" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="TASKSet" Role="FromRole_Task_Chg_Info"/>
+                    <End EntitySet="CHG_INFOSet" Role="ToRole_Task_Chg_Info"/>
+                </AssociationSet>
+                <AssociationSet Name="Task_Dc_InfoSet" Association="ZACDC_MANAGE_TASK_SRV.Task_Dc_Info" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="TASKSet" Role="FromRole_Task_Dc_Info"/>
+                    <End EntitySet="DC_INFOSet" Role="ToRole_Task_Dc_Info"/>
+                </AssociationSet>
+                <FunctionImport Name="Assign_To" ReturnType="Collection(ZACDC_MANAGE_TASK_SRV.RETURN_DATA)" m:HttpMethod="POST" sap:label="Assign To">
+                    <Parameter Name="TaskIdSet" Type="Edm.String" Mode="In"/>
+                    <Parameter Name="User" Type="Edm.String" Mode="In" MaxLength="50"/>
+                </FunctionImport>
+                <FunctionImport Name="Send_Summary_Excel" ReturnType="Collection(ZACDC_MANAGE_TASK_SRV.RETURN_DATA)" m:HttpMethod="POST" sap:label="Send Summary Excel">
+                    <Parameter Name="TaskIdSet" Type="Edm.String" Mode="In"/>
+                </FunctionImport>
+                <FunctionImport Name="Send_Notification" ReturnType="Collection(ZACDC_MANAGE_TASK_SRV.RETURN_DATA)" m:HttpMethod="POST" sap:label="Send Notification">
+                    <Parameter Name="TaskIdSet" Type="Edm.String" Mode="In"/>
+                    <Parameter Name="Link" Type="Edm.String" Mode="In"/>
+                </FunctionImport>
+                <FunctionImport Name="Change_Status" ReturnType="Collection(ZACDC_MANAGE_TASK_SRV.RETURN_DATA)" m:HttpMethod="POST" sap:label="Change Status">
+                    <Parameter Name="Status" Type="Edm.String" Mode="In" MaxLength="1"/>
+                    <Parameter Name="TaskIdSet" Type="Edm.String" Mode="In"/>
+                </FunctionImport>
+                <FunctionImport Name="Postpone" ReturnType="Collection(ZACDC_MANAGE_TASK_SRV.RETURN_DATA)" m:HttpMethod="POST" sap:label="Postpone">
+                    <Parameter Name="TaskIdSet" Type="Edm.String" Mode="In"/>
+                    <Parameter Name="Date" Type="Edm.DateTime" Mode="In" Precision="0"/>
+                </FunctionImport>
+                <FunctionImport Name="Reset" ReturnType="Collection(ZACDC_MANAGE_TASK_SRV.RETURN_DATA)" m:HttpMethod="POST" sap:label="Reset Status">
+                    <Parameter Name="TaskIdSet" Type="Edm.String" Mode="In"/>
+                </FunctionImport>
+                <FunctionImport Name="Generate_Html" ReturnType="ZACDC_MANAGE_TASK_SRV.RETURN_PDF" m:HttpMethod="POST" sap:label="Generate HTML for PDF">
+                    <Parameter Name="TaskIdSet" Type="Edm.String" Mode="In"/>
+                </FunctionImport>
+            </EntityContainer>
+            <Annotations Target="ZACDC_MANAGE_TASK_SRV.TASK/Status" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+                    <Record>
+                        <PropertyValue Property="CollectionPath" String="STATUS_F4_HELPSet"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="Status"/>
+                                    <PropertyValue Property="ValueListProperty" String="Value"/>
+                                </Record>
+                                <Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="Descr"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZACDC_MANAGE_TASK_SRV.TASK/Triger" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+                    <Record>
+                        <PropertyValue Property="CollectionPath" String="TRIGER_F4_HELPSet"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="Triger"/>
+                                    <PropertyValue Property="ValueListProperty" String="Triger"/>
+                                </Record>
+                                <Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="TrigerT"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZACDC_MANAGE_TASK_SRV.TASK/Rgroup" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+                    <Record>
+                        <PropertyValue Property="CollectionPath" String="RGROUP_F4_HELPSet"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="Rgroup"/>
+                                    <PropertyValue Property="ValueListProperty" String="Rgroup"/>
+                                </Record>
+                                <Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="RgroupT"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZACDC_MANAGE_TASK_SRV.TASK/Taskty" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+                    <Record>
+                        <PropertyValue Property="CollectionPath" String="TASKTY_F4_HELPSet"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="Taskty"/>
+                                    <PropertyValue Property="ValueListProperty" String="Value"/>
+                                </Record>
+                                <Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="Descr"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZACDC_MANAGE_TASK_SRV.TASK/Werks" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+                    <Record>
+                        <PropertyValue Property="CollectionPath" String="WERKS_F4_HELPSet"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="Werks"/>
+                                    <PropertyValue Property="ValueListProperty" String="Werks"/>
+                                </Record>
+                                <Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="Sort2"/>
+                                </Record>
+                                <Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="Sort1"/>
+                                </Record>
+                                <Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="PostCcode1"/>
+                                </Record>
+                                <Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="City1"/>
+                                </Record>
+                                <Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="Name2"/>
+                                </Record>
+                                <Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="Name1"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZACDC_MANAGE_TASK_SRV.TASK/Matnr" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+                    <Record>
+                        <PropertyValue Property="CollectionPath" String="MATNR_F4_HELPSet"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="Matnr"/>
+                                    <PropertyValue Property="ValueListProperty" String="Display_Matnr"/>
+                                </Record>
+                                <Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="Display_Matnr_T"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZACDC_MANAGE_TASK_SRV.TASK/Prodh" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+                    <Record>
+                        <PropertyValue Property="CollectionPath" String="PRODH_F4_HELPSet"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="Prodh"/>
+                                    <PropertyValue Property="ValueListProperty" String="Prodh"/>
+                                </Record>
+                                <Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="ProdhT"/>
+                                </Record>
+                                <Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="Stufe"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZACDC_MANAGE_TASK_SRV.TASK/Mtart" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+                    <Record>
+                        <PropertyValue Property="CollectionPath" String="MTART_F4_HELPSet"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="Mtart"/>
+                                    <PropertyValue Property="ValueListProperty" String="Mtart"/>
+                                </Record>
+                                <Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="MtartT"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZACDC_MANAGE_TASK_SRV.TASK/Tragr" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+                    <Record>
+                        <PropertyValue Property="CollectionPath" String="TRAGR_F4_HELPSet"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="Tragr"/>
+                                    <PropertyValue Property="ValueListProperty" String="Tragr"/>
+                                </Record>
+                                <Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="TragrT"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZACDC_MANAGE_TASK_SRV.TASK/hiernode2" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+                    <Record>
+                        <PropertyValue Property="CollectionPath" String="ALDI_CAT_F4_HELPSet"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="hiernode2"/>
+                                    <PropertyValue Property="ValueListProperty" String="Aldi_Category"/>
+                                </Record>
+                                <Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="Description"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZACDC_MANAGE_TASK_SRV.TASK/CommodityGroup" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+                    <Record>
+                        <PropertyValue Property="CollectionPath" String="HIERNODE2_F4_HELPSet"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="CommodityGroup"/>
+                                    <PropertyValue Property="ValueListProperty" String="Comm_Grp"/>
+                                </Record>
+                                <Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="Comm_Grp_Txt"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZACDC_MANAGE_TASK_SRV.TASK/SubCommodityGroup" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+                    <Record>
+                        <PropertyValue Property="CollectionPath" String="HIERNODE4_F4_HELPSet"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="SubCommodityGroup"/>
+                                    <PropertyValue Property="ValueListProperty" String="Node"/>
+                                </Record>
+                                <Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="Comm_Grp"/>
+                                </Record>
+                                <Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="Comm_Grp_Txt"/>
+                                </Record>
+                                <Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="Sub_Comm_Grp"/>
+                                </Record>
+                                <Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="Sub_Comm_Grp_Txt"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZACDC_MANAGE_TASK_SRV.TASK/Mmsta" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+                    <Record>
+                        <PropertyValue Property="CollectionPath" String="MMSTA_F4_HELPSet"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="Mmsta"/>
+                                    <PropertyValue Property="ValueListProperty" String="Mmsta"/>
+                                </Record>
+                                <Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="MmstaT"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZACDC_MANAGE_TASK_SRV.TASK/Dispo" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+                    <Record>
+                        <PropertyValue Property="CollectionPath" String="DISPO_F4_HELPSet"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="Dispo"/>
+                                    <PropertyValue Property="ValueListProperty" String="Dispo"/>
+                                </Record>
+                                <Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="Dsnam"/>
+                                </Record>
+                                <Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="Dstel"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZACDC_MANAGE_TASK_SRV.TASK/Fprfm" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+                    <Record>
+                        <PropertyValue Property="CollectionPath" String="FPRFM_F4_HELPSet"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="Fprfm"/>
+                                    <PropertyValue Property="ValueListProperty" String="Fprfm"/>
+                                </Record>
+                                <Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="FprfmT"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZACDC_MANAGE_TASK_SRV.TASK/Zzprgrp" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+                    <Record>
+                        <PropertyValue Property="CollectionPath" String="EKGRP_F4_HELPSet"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="Zzprgrp"/>
+                                    <PropertyValue Property="ValueListProperty" String="Ekgrp"/>
+                                </Record>
+                                <Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="Eknam"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZACDC_MANAGE_TASK_SRV.TASK/Bstyp" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+                    <Record>
+                        <PropertyValue Property="CollectionPath" String="BSTYP_F4_HELPSet"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="Bstyp"/>
+                                    <PropertyValue Property="ValueListProperty" String="Value"/>
+                                </Record>
+                                <Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="Descr"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZACDC_MANAGE_TASK_SRV.TASK/Bsart" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+                    <Record>
+                        <PropertyValue Property="CollectionPath" String="BSART_F4_HELPSet"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="Bsart"/>
+                                    <PropertyValue Property="ValueListProperty" String="Bsart"/>
+                                </Record>
+                                <Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="BsartT"/>
+                                </Record>
+                                <Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="BstypT"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZACDC_MANAGE_TASK_SRV.BSART_F4_HELP/Bstyp" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+                    <Record>
+                        <PropertyValue Property="CollectionPath" String="BSTYP_F4_HELPSet"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="Bstyp"/>
+                                    <PropertyValue Property="ValueListProperty" String="Value"/>
+                                </Record>
+                                <Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="Descr"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZACDC_MANAGE_TASK_SRV.TASK/Inco1" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+                    <Record>
+                        <PropertyValue Property="CollectionPath" String="INCO1_F4_HELPSet"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="Inco1"/>
+                                    <PropertyValue Property="ValueListProperty" String="Inco1"/>
+                                </Record>
+                                <Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="Inco1T"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZACDC_MANAGE_TASK_SRV.TASK/Aktyp" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+                    <Record>
+                        <PropertyValue Property="CollectionPath" String="AKTYP_F4_HELPSet"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="Aktyp"/>
+                                    <PropertyValue Property="ValueListProperty" String="Aktyp"/>
+                                </Record>
+                                <Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="AktypT"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZACDC_MANAGE_TASK_SRV.TASK/Akart" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+                    <Record>
+                        <PropertyValue Property="CollectionPath" String="AKART_F4_HELPSet"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="Akart"/>
+                                    <PropertyValue Property="ValueListProperty" String="Akart"/>
+                                </Record>
+                                <Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="AkartT"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZACDC_MANAGE_TASK_SRV.TASK/ZpromotionStatus" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+                    <Record>
+                        <PropertyValue Property="CollectionPath" String="ZPROMOTION_STATUS_F4_HELPSet"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="ZpromotionStatus"/>
+                                    <PropertyValue Property="ValueListProperty" String="Value"/>
+                                </Record>
+                                <Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="Descr"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZACDC_MANAGE_TASK_SRV.TASK/AssignedTo" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+                    <Record>
+                        <PropertyValue Property="CollectionPath" String="USER_F4_HELPSet"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="AssignedTo"/>
+                                    <PropertyValue Property="ValueListProperty" String="User"/>
+                                </Record>
+                                <Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="Name"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZACDC_MANAGE_TASK_SRV.TASK/UnameCrt" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+                    <Record>
+                        <PropertyValue Property="CollectionPath" String="ALL_USER_F4_HELPSet"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="UnameCrt"/>
+                                    <PropertyValue Property="ValueListProperty" String="User"/>
+                                </Record>
+                                <Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="Name"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZACDC_MANAGE_TASK_SRV.TASK/UnameChg" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+                    <Record>
+                        <PropertyValue Property="CollectionPath" String="USER_F4_HELPSet"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="UnameChg"/>
+                                    <PropertyValue Property="ValueListProperty" String="User"/>
+                                </Record>
+                                <Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="Name"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZACDC_MANAGE_TASK_SRV.USER_F4_HELP/Rgroup" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+                    <Record>
+                        <PropertyValue Property="CollectionPath" String="RGROUP_F4_HELPSet"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="Rgroup"/>
+                                    <PropertyValue Property="ValueListProperty" String="Rgroup"/>
+                                </Record>
+                                <Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="RgroupT"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZACDC_MANAGE_TASK_SRV.ALL_USER_F4_HELP/Rgroup" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+                    <Record>
+                        <PropertyValue Property="CollectionPath" String="RGROUP_F4_HELPSet"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="Rgroup"/>
+                                    <PropertyValue Property="ValueListProperty" String="Rgroup"/>
+                                </Record>
+                                <Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="RgroupT"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <atom:link rel="self" href="https://erpmybulletin.aldi-pr2.com:443/sap/opu/odata/sap/ZACDC_MANAGE_TASK_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="https://erpmybulletin.aldi-pr2.com:443/sap/opu/odata/sap/ZACDC_MANAGE_TASK_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
